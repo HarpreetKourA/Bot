@@ -23,8 +23,8 @@ class NewsScraper:
             feed = feedparser.parse(url)
             
             headlines = []
-            # Limit to top 15 entries to avoid overwhelming the model
-            for entry in feed.entries[:15]:
+            # Limit to top 10 entries to avoid overwhelming the model
+            for entry in feed.entries[:10]:
                 headlines.append({
                     'title': entry.title,
                     'link': entry.link,
